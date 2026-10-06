@@ -1,0 +1,11 @@
+.next
+node_modules
+out
+build
+coverage
+public/maplibre
+next-env.d.ts
+*.tsbuildinfo
+*.ico
+*.svg
+database/**/*.sql
