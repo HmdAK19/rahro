@@ -1,0 +1,35 @@
+services:
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - rahro_redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: rahro
+      POSTGRES_USER: rahro
+      POSTGRES_PASSWORD: rahro_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - rahro_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rahro -d rahro"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  rahro_postgres_data:
+  rahro_redis_data:
