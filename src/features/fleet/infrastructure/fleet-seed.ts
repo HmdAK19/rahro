@@ -1,0 +1,58 @@
+import type { Driver } from "../domain/driver";
+
+const now = new Date().toISOString();
+
+export const initialDrivers: readonly Driver[] = [
+  {
+    id: "DRV-101",
+    name: "امیرحسین رضایی",
+    phone: "09121234567",
+    vehicle: "وانت آریسان",
+    plate: "۴۵ ب ۸۲۱ ایران ۱۱",
+    status: "delivering",
+    lat: 35.7219,
+    lng: 51.3347,
+    accuracy: 12,
+    updatedAt: now,
+    source: "simulator",
+  },
+  {
+    id: "DRV-102",
+    name: "محمد نظری",
+    phone: "09123345678",
+    vehicle: "موتورسیکلت",
+    plate: "تهران ۷۸۲۱",
+    status: "online",
+    lat: 35.7311,
+    lng: 51.4065,
+    accuracy: 9,
+    updatedAt: now,
+    source: "simulator",
+  },
+  {
+    id: "DRV-103",
+    name: "سارا احمدی",
+    phone: "09124456789",
+    vehicle: "پراید وانت",
+    plate: "۲۱ ج ۴۲۳ ایران ۴۴",
+    status: "delivering",
+    lat: 35.7021,
+    lng: 51.3902,
+    accuracy: 18,
+    updatedAt: now,
+    source: "simulator",
+  },
+  {
+    id: "DRV-104",
+    name: "علی اکبری",
+    phone: "09125567890",
+    vehicle: "موتورسیکلت",
+    plate: "تهران ۳۴۹۰",
+    status: "offline",
+    lat: 35.746,
+    lng: 51.303,
+    accuracy: 22,
+    updatedAt: now,
+    source: "simulator",
+  },
+];
